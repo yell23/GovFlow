@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Color Tokens ─── */
+  --color-ink-navy: #122B4D;
+  --color-route-blue: #2457D6;
+  --color-signal-yellow: #F4B400;
+  --color-paper: #F8F9FB;
+  --color-slate: #5C6B7A;
+  --color-alert-red: #D64545;
+  --color-card-border: #E3E7ED;
+  --color-card-bg: #FFFFFF;
+
+  /* Route Blue tints */
+  --color-route-blue-50: #EEF2FD;
+  --color-route-blue-100: #D5DFFB;
+  --color-route-blue-200: #AABFF7;
+  --color-route-blue-600: #1D49B5;
+
+  /* Signal Yellow tints */
+  --color-signal-yellow-50: #FEF9EC;
+  --color-signal-yellow-100: #FDF0C0;
+
+  /* Alert Red tints */
+  --color-alert-red-50: #FDF0F0;
+  --color-alert-red-100: #FAD4D4;
+
+  /* Ink Navy tints */
+  --color-ink-navy-50: #EDF1F6;
+  --color-ink-navy-100: #C9D5E4;
+
+  /* Slate tints */
+  --color-slate-50: #F1F3F5;
+  --color-slate-100: #DDE2E7;
+
+  /* Green for success */
+  --color-success: #1A8754;
+  --color-success-50: #EBF7F2;
+  --color-success-100: #C3EADA;
+
+  /* ─── Font Families ─── */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* ─── Motion Tokens ─── */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+  --duration-signature: 400ms;
+
+  --ease-out-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-settle: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ─── Border Radius ─── */
+  --radius-card: 12px;
+  --radius-btn: 7px;
+  --radius-badge: 20px;
+
+  /* ─── Shadows (flat system - minimal) ─── */
+  --shadow-card: 0 0 0 0.5px var(--color-card-border);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-paper);
+  color: var(--color-ink-navy);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-card-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate-100);
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid var(--color-route-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
